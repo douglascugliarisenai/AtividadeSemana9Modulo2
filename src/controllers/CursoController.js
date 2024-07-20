@@ -14,10 +14,7 @@ class CursoController {
                 return response.status(400).json({erro: 'Duracao obrigatorio'})
             }
 
-            const curso = await Curso.create({
-                nome: dados.nome,
-                duracao: dados.duracao
-            })
+            const curso = await Curso.create(dados)
             
             if(!curso){
                 return response.status(400).json({erro: 'Erro ao cadastrar o curso'})
