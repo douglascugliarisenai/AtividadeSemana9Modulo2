@@ -12,7 +12,7 @@ function validaToken(req,res,next){
     
         const decoded = verify(tokenValido, process.env.JWT_SECRET)
 
-        req.userId = decoded.id
+        req.usuarioId = decoded.id
     
         next()
     } catch (error) {
